@@ -1,0 +1,146 @@
+$screens: (
+    netbook: 1050px,
+    tablet: 830px,
+    phabletplus: 620px,
+    phablet: 500px,
+    phone: 400px,
+);
+
+@function screens($x) {
+    @return map-get($screens, $x);
+}
+
+$shadow: 2px 3px 6px 0px;;
+
+@mixin netbook {
+    @media (max-width: #{screens(netbook)}) {
+        @content;
+    }
+}
+@mixin phabletplus {
+    @media (max-width: #{screens(phabletplus)}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: #{screens(tablet)}) {
+        @content;
+    }
+}
+@mixin phablet {
+    @media (max-width: #{screens(phablet)}) {
+        @content;
+    }
+}
+@mixin phone {
+    @media (max-width: #{screens(phone)}) {
+        @content;
+    }
+}
+
+.card-field-index {
+    display: flex;
+    @include netbook() {
+        flex-direction: column;
+    }
+    .card {
+        @include netbook() {
+            width: 55%;
+            margin-bottom: 5em;
+        } 
+        @include tablet {
+            width: 70%;
+            margin-bottom: 3em;
+        }
+        @include phablet {
+            width: 90%;
+            margin-bottom: 2em;
+        }
+        @include phone {
+            width: 100%;
+            margin-bottom: 1em;
+        }  
+    }
+}
+.card-field-repserv {
+   margin: 0 auto 5rem auto;
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   .card {
+    @include netbook() {
+        width: 40%;
+        margin-bottom: 5em;
+    } 
+    @include tablet {
+        width: 45%;
+        margin-bottom: 3em;
+    }
+    @include phabletplus {
+        width: 65%;
+    }
+    @include phablet {
+        width: 90%;
+        margin-bottom: 2em;
+    }
+    @include phone {
+        width: 100%;
+        margin-bottom: 1em;
+    }  
+    }
+}
+.card {
+    background-color: #F3F3F3;
+    width: 300px;
+    height: 400px;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+
+    &--shadow {
+        box-shadow: $shadow;
+    }
+    @include netbook() {
+        width: 90%;
+    }
+    @include tablet {
+        width: 80%;
+    }
+    @include phablet {
+        width: 90%;
+    }
+    @include phone {
+        width: 100%;
+    }
+
+    &__img {
+        width: 100%;
+        height: 270px;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    &__text-block{
+        width: 80%;
+        margin: 1em auto;
+    }
+
+    &__h2 {
+        height: 50px;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 400;
+        color: firebrick;
+    }
+
+    &__p{
+        text-align: center;     
+        font-size: 2em;
+        font-weight: 400;
+        color: #0E91F0;
+        margin: 0.3em auto;
+    }
+}

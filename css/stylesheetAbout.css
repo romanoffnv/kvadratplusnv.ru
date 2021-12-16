@@ -1,0 +1,108 @@
+main {
+    background-color: #fff;
+    width: 100%;
+    margin: 0 auto;
+    color: #000;
+}
+main h1 {
+    font-size: 3em;
+    font-weight: 300;
+    margin: 2em 0;
+}
+.contentWrapper {
+    border: solid transparent;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mainBlocks {
+    margin: 5em auto;
+    display: flex;
+    justify-content: space-around;
+}
+.iconBlocks {
+    width: 30%;
+    font-size: 7em;
+    color: orange;
+}
+.textBlocks {
+    width: 60%;
+}
+.textBlocks h2 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.textBlocks p {
+    margin: 1em 0;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+@media (max-width: 845px) {
+    .textBlocks p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 750px) {
+    .textBlocks h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 700px) {
+    .mainBlocks {
+        margin-top: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+    .textBlocks {
+        width: 100%;
+    }
+    .iconBlocks {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        display: flex;
+        margin: 0.2em auto;
+        font-size: 10em;
+    }
+    .whyUsIcon {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+    .textBlocks h2 {
+        text-align: center;
+    }
+    .textBlocks p {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 460px) {
+    main h1 {
+        text-align: center; 
+    }
+    .textBlocks h2 {
+        font-size: 1.5em;
+    }
+    .textBlocks p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 340px) {
+    main h1 {
+        font-size: 2em; 
+    }
+    .textBlocks h2 {
+        font-size: 1.2em;
+    }
+    .textBlocks p {
+        font-size: 0.8em;
+    }
+}
